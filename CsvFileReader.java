@@ -10,9 +10,8 @@ public class CsvFileReader {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-
             while ((line = br.readLine()) != null) {
-                String[] values = line.split(",",10); // based on CSV format
+                String[] values = line.split(",",8); // based on CSV format
                 DataObject dataObject = new DataObject();
                 dataObject.setA(values[0]);
                 dataObject.setB(values[1]);

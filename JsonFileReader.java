@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class JsonFileReader {
+public class JsonFileReader  {
     public List<DataObject> readJsonFile(String filePath) {
         try {
             Gson gson = new Gson();

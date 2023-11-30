@@ -1,7 +1,7 @@
 public class DataObject {
-    private String A, B, C,D,E, F, G,H,I;
+    private String A, B, C,D,E, F, G,H;
     // Constructor
-    public DataObject(String A, String B, String C, String D, String E, String F, String G, String H,String I) {
+    public DataObject(String A, String B, String C, String D, String E, String F, String G, String H) {
         this.A = A;
         this.B = B;
         this.C = C;
@@ -10,8 +10,6 @@ public class DataObject {
         this.F = F;
         this.G = G;
         this.H = H;
-        this.I = I;
-
     }
 
     // Default Constructor
@@ -83,19 +81,13 @@ public class DataObject {
     public void setH(String H) {
         this.H = H;
     }
-    public String getI() {
-        return I;
-    }
 
-    public void setI(String I) {
-        this.I = I;
-    }
     // Other methods, to convert data
     public Object[] getDataAsArray() {
-        return new Object[]{ A, B, C, D, E, F, G, H, I};
+        return new Object[]{ A, B, C, D, E, F, G, H};
     }
 
     public Object[] getColumnNames() {
-        return new Object[]{"A", "B", "C", "D", "E", "F", "G", "H","I"};
+        return new Object[]{"A", "B", "C", "D", "E", "F", "G", "H"};
     }
 }

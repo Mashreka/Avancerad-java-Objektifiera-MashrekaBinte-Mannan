@@ -3,6 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainApp {
@@ -50,7 +51,7 @@ public class MainApp {
                 }
             }
         });
-
+        //GUI components
         tableModel = new DefaultTableModel();
         table = new JTable(tableModel);
         table.setRowHeight(20);
@@ -67,16 +68,27 @@ public class MainApp {
         frame.setVisible(true);
     }
 
+    //presentera data i tabelen
     private void displayDataInTable(List<DataObject> data) {
+        //set the number of rows in the model.
+        //If the new size is greater than the current size ,new rows are added to the end of the model
         tableModel.setRowCount(0);
+        //sets the number of columns in the model.
+        //if the new size is greater than the current size,new columns are added to the end of the model with null cell values.
         tableModel.setColumnCount(0);
 
         if (data != null && !data.isEmpty()) {
-            Object[] columnNames = data.get(0).getColumnNames();
+            Object[] columnNames = data.get(0).getColumnNames(); //för att hitta 1st kolumn namn
+            //Replaces the column identifiers in the model.
+            //if the number of new identifiers is greater than the current number of columns ,new columns are added to the end of each row in the model.
+            //if  the number of newIdentifiers  is less than the current number of columns, all the extra columns at the end of a row are discarded.
             tableModel.setColumnIdentifiers(columnNames);
 
+
             for (DataObject obj : data) {
-                tableModel.addRow(obj.getDataAsArray());
+                tableModel.addRow(obj.getDataAsArray());//lägga till rad data i tabelen
+
+
             }
         }
     }
