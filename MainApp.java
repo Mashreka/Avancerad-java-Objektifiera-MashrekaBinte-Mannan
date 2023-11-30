@@ -54,6 +54,7 @@ public class MainApp {
         //GUI components
         tableModel = new DefaultTableModel();
         table = new JTable(tableModel);
+        table.setAutoCreateRowSorter(true);
         table.setRowHeight(20);
         table.setFont(new Font("Arial", Font.PLAIN, 13));
         JScrollPane scrollPane = new JScrollPane(table);
@@ -94,8 +95,7 @@ public class MainApp {
     }
 
     public static void main(String[] args) {
-
-                new MainApp();
+        new MainApp();
     }
 
 }
