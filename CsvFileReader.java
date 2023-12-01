@@ -6,6 +6,7 @@ import java.util.List;
 
 public class CsvFileReader {
     public List<DataObject> readCsvFile(String filePath) {
+
         List<DataObject> dataObjects = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

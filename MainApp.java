@@ -29,7 +29,7 @@ public class MainApp {
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-                    //kan läsa json file data
+                    //call method from JsonFileReader för att visa Json file data
                     List<DataObject> data = jsonFileReader.readJsonFile(filePath);
                     displayDataInTable(data);
                 }
@@ -37,6 +37,8 @@ public class MainApp {
         });
 
         JButton csvButton = new JButton("Read CSV File"); //Button för att ge action att läsa csv file
+
+
         csvButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //för att välja vilken file ska jag läsa
@@ -44,9 +46,8 @@ public class MainApp {
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-                    //kan läsa json file data
+                    //call method from CsvFileReader för att visa Csv file data
                     List<DataObject> data = csvFileReader.readCsvFile(filePath);
-                    //visa json file data i table
                     displayDataInTable(data);
                 }
             }
