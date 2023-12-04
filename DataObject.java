@@ -17,7 +17,7 @@ public class DataObject {
 
     }
 
-    // Getters and Setters
+    // Set and Get the values of the properties
     public String getA() {
         return A;
     }
@@ -82,11 +82,12 @@ public class DataObject {
         this.H = H;
     }
 
-    // Other methods, to convert data
+    // // Convert the data into an array
     public Object[] getDataAsArray() {
         return new Object[]{ A, B, C, D, E, F, G, H};
     }
 
+    // Get the column names
     public Object[] getColumnNames() {
         return new Object[]{"A", "B", "C", "D", "E", "F", "G", "H"};
     }

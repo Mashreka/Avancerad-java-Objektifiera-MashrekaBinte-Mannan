@@ -29,7 +29,7 @@ public class MainApp {
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-                    //call method from JsonFileReader för att visa Json file data
+                    // Call method from CsvFileReader to read the Json file
                     List<DataObject> data = jsonFileReader.readJsonFile(filePath);
                     displayDataInTable(data);
                 }
@@ -46,7 +46,7 @@ public class MainApp {
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-                    //call method from CsvFileReader för att visa Csv file data
+                    // Call method from CsvFileReader to read the CSV file
                     List<DataObject> data = csvFileReader.readCsvFile(filePath);
                     displayDataInTable(data);
                 }
